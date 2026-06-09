@@ -1,0 +1,4 @@
+public/
+.DS_Store
+.sass-cache/
+static/processed_images/
