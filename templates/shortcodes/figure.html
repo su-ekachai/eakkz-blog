@@ -1,0 +1,12 @@
+{#- Responsive, subpath-safe figure for a colocated post image.
+    Usage: {{ figure(src="haku.jpg", alt="...", caption="...", width=1000) }} -#}
+{%- set w = width | default(value=1000) -%}
+{%- set img = resize_image(path=page.colocated_path ~ src, width=w, op="fit_width", quality=82) -%}
+<figure class="post-figure">
+  <a class="post-figure__link" href="{{ get_url(path=page.colocated_path ~ src) | safe }}" target="_blank" rel="noopener" aria-label="Open full-size image in a new tab">
+    <img src="{{ img.url | safe }}" width="{{ img.width }}" height="{{ img.height }}" alt="{{ alt | default(value='') }}" loading="lazy" decoding="async">
+  </a>
+  {%- if caption %}
+  <figcaption class="post-figure__caption">{{ caption }}</figcaption>
+  {%- endif %}
+</figure>

@@ -1,0 +1,9 @@
+public/
+.DS_Store
+.sass-cache/
+static/processed_images/
+
+# agent tooling (local skill installs, reinstallable via npx skills)
+.agents/
+.roo/
+skills-lock.json

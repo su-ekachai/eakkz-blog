@@ -1,0 +1,166 @@
+<style>
+  /* 
+    Catppuccin Theme
+    Light: Latte
+    Dark: Mocha
+    Accent: Blue
+  */
+
+  /* Light Mode - Soft Vanilla & Ultramarine */
+  body {
+    /* Ultramarine */
+    --primary-color: #4361ee;
+    --primary-pale-color: #4361ee33;
+    --primary-decoration-color: #4361ee10;
+
+    /* Base - Soft Vanilla */
+    --bg-color: #fbf6e9;
+
+    /* Text */
+    --text-color: #4c4f69;
+
+    /* Subtext1 */
+    --text-pale-color: #5c5f77;
+
+    /* Overlay0 */
+    --text-decoration-color: #9ca0b0;
+
+    --highlight-mark-color: #4361ee20;
+
+    /* Callout Colors */
+    --callout-note-color: #4361ee;
+    /* Ultramarine */
+    --callout-tip-color: #40a02b;
+    /* Green */
+    --callout-important-color: #7287fd;
+    /* Lavender */
+    --callout-warning-color: #df8e1d;
+    /* Yellow */
+    --callout-caution-color: #d20f39;
+    /* Red */
+  }
+
+  /* Dark Mode - Catppuccin Mocha */
+  body.dark {
+    /* Blue */
+    --primary-color: #89b4fa;
+    --primary-pale-color: #89b4fa66;
+    --primary-decoration-color: #89b4fa12;
+
+    /* Base */
+    --bg-color: #1e1e2e;
+
+    /* Text */
+    --text-color: #cdd6f4;
+
+    /* Subtext1 */
+    --text-pale-color: #bac2de;
+
+    /* Overlay0 */
+    --text-decoration-color: #6c7086;
+
+    --highlight-mark-color: #89b4fa3b;
+
+    /* Callout Colors */
+    --callout-note-color: #89b4fa;
+    /* Blue */
+    --callout-tip-color: #a6e3a1;
+    /* Green */
+    --callout-important-color: #b4befe;
+    /* Lavender */
+    --callout-warning-color: #f9e2af;
+    /* Yellow */
+    --callout-caution-color: #f38ba8;
+    /* Red */
+  }
+
+  /* Typography - Modern System Stack */
+  body {
+    --main-font: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --code-font: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    /* Layout adjustments */
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 80px;
+    --font-size: 17px;
+    --line-height: 1.75;
+
+    /* Rounded corners */
+    --img-border-radius: 12px;
+    --detail-border-radius: 8px;
+    --inline-code-border-radius: 4px;
+    --block-code-border-radius: 8px;
+
+    /* Restore theme tokens this file shadows (consumed by main.scss for code/details/inline-code) */
+    --inline-code-bg-color: var(--primary-decoration-color);
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+  /* ===== Resume page ===== */
+  .prose > .resume:first-child { margin-top: 0.6em; }
+
+  /* File card: Serene border-based elevation (no shadow); neutral frame so the CTA leads */
+  .prose .resume-card {
+    display: flex; flex-direction: column; gap: 0.85em;
+    margin: 1.25em 0; padding: 1.05em 1.2em;
+    border: 1.5px solid var(--text-decoration-color);
+    border-radius: var(--detail-border-radius, 8px);
+  }
+  .resume-card__head { display: flex; align-items: center; gap: 0.75em; }
+  .resume-card__icon { width: 1.85em; height: 1.85em; flex-shrink: 0; color: var(--primary-color); }
+  .prose .resume-card__title { margin: 0; font-weight: 600; color: var(--text-color); }
+  .prose .resume-card__meta { margin: 0.1em 0 0; font-size: 0.85em; color: var(--text-pale-color); }
+
+  .resume-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6em 0.8em; }
+
+  /* Buttons: the page's only accent. Scoped under .prose to beat `.prose a` (0-1-1) */
+  .prose .resume-actions a.resume-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.4em;
+    min-height: 44px; padding: 0.5em 1.05em; box-sizing: border-box;
+    border: 1.5px solid var(--primary-color); border-radius: var(--detail-border-radius, 8px);
+    font-size: 0.95em; font-weight: 600; line-height: 1; white-space: nowrap;
+    text-decoration: none; cursor: pointer;
+    transition: opacity .15s ease, background-color .15s ease, color .15s ease, transform .1s ease;
+  }
+  .prose .resume-actions a.resume-btn:focus-visible { outline-offset: 2px; }
+  .prose .resume-actions a.resume-btn:active { transform: translateY(1px); }
+  .prose .resume-actions a.resume-btn svg { width: 1.15em; height: 1.15em; flex-shrink: 0; }
+  .prose .resume-actions a.resume-btn--primary { background: var(--primary-color); color: var(--bg-color); }
+  body:not(.dark) .prose .resume-actions a.resume-btn--primary { color: #fff; } /* extra light-mode contrast headroom */
+  .prose .resume-actions a.resume-btn--primary:hover { opacity: 0.88; }
+  .prose .resume-actions a.resume-btn--ghost { background: transparent; color: var(--primary-color); }
+  .prose .resume-actions a.resume-btn--ghost:hover { opacity: unset; background: var(--primary-pale-color); }
+
+  /* Inline viewer: neutral frame; white in light mode, dark surface in dark mode */
+  .resume-viewer {
+    display: block; width: 100%; height: 80vh; min-height: 600px; margin: 1.25em 0 0;
+    border: 1.5px solid var(--text-decoration-color);
+    border-radius: var(--block-code-border-radius, 8px);
+    background: #fff;
+  }
+  body.dark .resume-viewer { background: #313244; }
+  .resume-fallback {
+    display: flex; align-items: center; justify-content: center;
+    height: 100%; min-height: 200px; padding: 2em; text-align: center;
+  }
+  .prose .resume-fallback p { margin: 0; }
+  .prose .resume-note { display: none; margin: 0.75em 0 0; font-size: 0.85em; color: var(--text-pale-color); }
+
+  /* Mobile: swap the (often-blank) embed for card + note */
+  @media (max-width: 640px) {
+    .resume-viewer { display: none; }
+    .prose .resume-note { display: block; }
+    .prose .resume-actions a.resume-btn { flex: 1 1 12em; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .prose .resume-actions a.resume-btn { transition: none; }
+  }
+
+  /* ===== Post figures (colocated images) ===== */
+  .prose .post-figure { margin: 1.6em 0; }
+  .prose .post-figure__link { display: block; border-bottom: none; } /* reset theme .prose a underline */
+  .prose .post-figure img { display: block; max-width: 100%; height: auto; margin: 0 auto; border-radius: var(--img-border-radius, 12px); }
+  .prose figcaption.post-figure__caption { margin-top: 0.6em; text-align: center; font-size: 0.85em; color: var(--text-pale-color); }
+</style>
