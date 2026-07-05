@@ -22,8 +22,8 @@ links = [
 recent = true
 recent_max = 5
 recent_more_text = "more »"
-date_format = "%b %-d, %Y"
+date_format = "%Y-%m-%d"
 +++
 
-Hi, I'm Ekachai. I write about technology, coding, and my journey as a developer.
+Hi, I'm Ekachai. I write about technology, coding, gaming, and my journey as a developer.
 Welcome to my blog!

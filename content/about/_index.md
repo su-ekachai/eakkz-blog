@@ -30,5 +30,3 @@ To be honest, I’m someone who gets bored pretty easily. One day I might be dee
 *   [Resume](@/resume/_index.md)
 *   [GitHub](https://github.com/su-ekachai)
 *   [LinkedIn](https://www.linkedin.com/in/ekachai1012/)
-
-> **Full transparency:** I sometimes use AI tools to help polish my writing. The ideas and experiences are 100% mine, but the smooth grammar? That might be the AI helping me out.

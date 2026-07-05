@@ -13,7 +13,7 @@ lang = "en"
 title = "Posts"
 subtitle = "I write about ...."
 
-date_format = "%b %-d, %Y"
+date_format = "%Y-%m-%d"
 
 categorized = false # posts can be categorized
 back_to_top = true # show back-to-top button
